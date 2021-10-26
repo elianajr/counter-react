@@ -12,7 +12,7 @@ const Counter = props => {
 			} else {
 				setCounter(0);
 			}
-		}, 1000);
+		}, props.time);
 		return () => clearInterval(interval);
 	}, [counter]);
 
@@ -24,7 +24,7 @@ const Counter = props => {
 };
 
 Counter.propTypes = {
-	counter: PropTypes.number
+	time: PropTypes.number
 };
 
 export default Counter;
