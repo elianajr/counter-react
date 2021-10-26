@@ -12,18 +12,37 @@
 
 */
 
-.timer {
-    background-image: url("https://images.unsplash.com/photo-1505156868547-9b49f4df4e04?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2263&q=80");
-    background-color: #cccccc;
+.container {
+    background-image: url("https://instamos.com/wp-content/uploads/2019/12/comprar-likes-instagram-espan%CC%83oles.jpg");
+    background-color: white;
     background-position: center; 
     background-repeat: no-repeat; 
-    background-size: cover;
+    background-size: 60%;
+    justify-content: center;
     height: 100vh;
-   
+    margin-top:100px;
+    
 }
 
 .text {
-    display: block;
+    display: flex;
     align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    height: fit-content;
 
 }
+
+span {
+    background-color:rgb(255, 255, 255);
+    border: 15px solid rgb(129, 131, 129);
+    box-shadow: 2px 5px #cac9c9;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;   
+    font-size: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
