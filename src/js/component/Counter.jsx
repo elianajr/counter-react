@@ -6,15 +6,20 @@ const Counter = props => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			console.log(counter);
-			if (counter < 9) {
-				setCounter(counter + 1);
-			} else {
-				setCounter(0);
+			if (props.isRunning) {
+				if (counter < 9) {
+					setCounter(counter + 1);
+				} else {
+					setCounter(0);
+				}
 			}
 		}, props.time);
 		return () => clearInterval(interval);
-	}, [counter]);
+	}, [counter, props.isRunning]);
+
+	useEffect(() => {
+		setCounter(0);
+	}, [props.isReset]);
 
 	return (
 		<div>
@@ -24,7 +29,9 @@ const Counter = props => {
 };
 
 Counter.propTypes = {
-	time: PropTypes.number
+	time: PropTypes.number,
+	isRunning: PropTypes.bool,
+	isReset: PropTypes.number
 };
 
 export default Counter;

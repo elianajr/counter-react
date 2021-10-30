@@ -1,20 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
 import Counter from "./Counter.jsx";
-// import Container from "react-bootstrap/Container";
-// import Row from "react-bootstrap/Row";
-// import Col from "react-bootstrap/Col";
 
-//include images into your bundle
-
-//create your first component
 const Home = () => {
+	const [isRunning, setIsRunning] = useState(true);
+	const [isReset, setIsReset] = useState(true);
+	const resetButton = () => {
+		setIsReset(!isReset);
+	};
+
 	return (
 		<div className="container">
 			<div className="text">
-				<Counter className="item1" time="1000000" />
-				<Counter className="item2" time="100000" />
-				<Counter className="item3" time="10000" />
-				<Counter className="item4" time="1000" />
+				<Counter
+					className="item1"
+					time="1000000"
+					isRunning={isRunning}
+					isReset={isReset}
+				/>
+				<Counter
+					className="item2"
+					time="100000"
+					isRunning={isRunning}
+					isReset={isReset}
+				/>
+				<Counter
+					className="item3"
+					time="10000"
+					isRunning={isRunning}
+					isReset={isReset}
+				/>
+				<Counter
+					className="item4"
+					time="1000"
+					isRunning={isRunning}
+					isReset={isReset}
+				/>
+			</div>
+
+			<div className="buttons">
+				<button
+					className="button play"
+					onClick={() => {
+						setIsRunning(true);
+					}}>
+					<i className="fas fa-play-circle"></i>
+				</button>
+				<button
+					className="button button-2 pause"
+					onClick={() => {
+						setIsRunning(false);
+					}}>
+					<i className="fas fa-pause-circle"></i>
+				</button>
+				<button className="button button-3 reset" onClick={resetButton}>
+					<i className="fas fa-power-off"></i>
+				</button>
 			</div>
 		</div>
 	);
